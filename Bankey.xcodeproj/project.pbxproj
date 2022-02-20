@@ -3,27 +3,29 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		4589168827C2276A0065535B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4589168727C2276A0065535B /* AppDelegate.swift */; };
-		4589168A27C2276A0065535B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4589168927C2276A0065535B /* SceneDelegate.swift */; };
-		4589168C27C2276A0065535B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4589168B27C2276A0065535B /* ViewController.swift */; };
-		4589168F27C2276A0065535B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4589168D27C2276A0065535B /* Main.storyboard */; };
+		4589168C27C2276A0065535B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4589168B27C2276A0065535B /* LoginViewController.swift */; };
 		4589169127C2276D0065535B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4589169027C2276D0065535B /* Assets.xcassets */; };
 		4589169427C2276D0065535B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4589169227C2276D0065535B /* LaunchScreen.storyboard */; };
+		4589169F27C25B1B0065535B /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4589169E27C25B1B0065535B /* LoginView.swift */; };
+		86614D43B5D4BB966C37125E /* Pods_Bankey.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA62A6DF55914ABFAA201CC4 /* Pods_Bankey.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4589168427C2276A0065535B /* Bankey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bankey.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4589168727C2276A0065535B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4589168927C2276A0065535B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		4589168B27C2276A0065535B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		4589168E27C2276A0065535B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4589168B27C2276A0065535B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		4589169027C2276D0065535B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4589169327C2276D0065535B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4589169527C2276D0065535B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4589169E27C25B1B0065535B /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		ACC72C501BD1BBCF0F7C96B6 /* Pods-Bankey.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bankey.release.xcconfig"; path = "Target Support Files/Pods-Bankey/Pods-Bankey.release.xcconfig"; sourceTree = "<group>"; };
+		DA62A6DF55914ABFAA201CC4 /* Pods_Bankey.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bankey.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E0DAA53B6C165232D7AE3017 /* Pods-Bankey.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bankey.debug.xcconfig"; path = "Target Support Files/Pods-Bankey/Pods-Bankey.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86614D43B5D4BB966C37125E /* Pods_Bankey.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +45,8 @@
 			children = (
 				4589168627C2276A0065535B /* Bankey */,
 				4589168527C2276A0065535B /* Products */,
+				8D99E0785534615BF9D58B85 /* Pods */,
+				4B5ED7025FF3FC247D59721D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +61,48 @@
 		4589168627C2276A0065535B /* Bankey */ = {
 			isa = PBXGroup;
 			children = (
+				4589169C27C25A9C0065535B /* Files */,
+				4589169D27C25AFD0065535B /* Login */,
 				4589168727C2276A0065535B /* AppDelegate.swift */,
-				4589168927C2276A0065535B /* SceneDelegate.swift */,
-				4589168B27C2276A0065535B /* ViewController.swift */,
-				4589168D27C2276A0065535B /* Main.storyboard */,
+			);
+			path = Bankey;
+			sourceTree = "<group>";
+		};
+		4589169C27C25A9C0065535B /* Files */ = {
+			isa = PBXGroup;
+			children = (
 				4589169027C2276D0065535B /* Assets.xcassets */,
 				4589169227C2276D0065535B /* LaunchScreen.storyboard */,
 				4589169527C2276D0065535B /* Info.plist */,
 			);
-			path = Bankey;
+			name = Files;
+			sourceTree = "<group>";
+		};
+		4589169D27C25AFD0065535B /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				4589168B27C2276A0065535B /* LoginViewController.swift */,
+				4589169E27C25B1B0065535B /* LoginView.swift */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		4B5ED7025FF3FC247D59721D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DA62A6DF55914ABFAA201CC4 /* Pods_Bankey.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8D99E0785534615BF9D58B85 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E0DAA53B6C165232D7AE3017 /* Pods-Bankey.debug.xcconfig */,
+				ACC72C501BD1BBCF0F7C96B6 /* Pods-Bankey.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +112,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4589169827C2276D0065535B /* Build configuration list for PBXNativeTarget "Bankey" */;
 			buildPhases = (
+				9C70520F45E15D48D7CD2168 /* [CP] Check Pods Manifest.lock */,
 				4589168027C2276A0065535B /* Sources */,
 				4589168127C2276A0065535B /* Frameworks */,
 				4589168227C2276A0065535B /* Resources */,
+				9CC64172638CC5FDF3DAA196 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -103,7 +143,7 @@
 				};
 			};
 			buildConfigurationList = 4589167F27C2276A0065535B /* Build configuration list for PBXProject "Bankey" */;
-			compatibilityVersion = "Xcode 13.0";
+			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -127,34 +167,67 @@
 			files = (
 				4589169427C2276D0065535B /* LaunchScreen.storyboard in Resources */,
 				4589169127C2276D0065535B /* Assets.xcassets in Resources */,
-				4589168F27C2276A0065535B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9C70520F45E15D48D7CD2168 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Bankey-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9CC64172638CC5FDF3DAA196 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Bankey/Pods-Bankey-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Bankey/Pods-Bankey-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Bankey/Pods-Bankey-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4589168027C2276A0065535B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4589168C27C2276A0065535B /* ViewController.swift in Sources */,
+				4589169F27C25B1B0065535B /* LoginView.swift in Sources */,
+				4589168C27C2276A0065535B /* LoginViewController.swift in Sources */,
 				4589168827C2276A0065535B /* AppDelegate.swift in Sources */,
-				4589168A27C2276A0065535B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		4589168D27C2276A0065535B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4589168E27C2276A0065535B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		4589169227C2276D0065535B /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -284,6 +357,7 @@
 		};
 		4589169927C2276D0065535B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E0DAA53B6C165232D7AE3017 /* Pods-Bankey.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -294,7 +368,6 @@
 				INFOPLIST_FILE = Bankey/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -312,6 +385,7 @@
 		};
 		4589169A27C2276D0065535B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ACC72C501BD1BBCF0F7C96B6 /* Pods-Bankey.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -322,7 +396,6 @@
 				INFOPLIST_FILE = Bankey/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
