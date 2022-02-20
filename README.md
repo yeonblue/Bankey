@@ -1,2 +1,2 @@
 # Bankey
-Bankey app Using UIKit
+Bankey App Using UIKit
