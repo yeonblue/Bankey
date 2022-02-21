@@ -26,6 +26,10 @@ class LoginView: UIView {
         $0.isSecureTextEntry = true
     }
     
+    let deviveView = UIView().then {
+        $0.backgroundColor = .secondarySystemFill
+    }
+    
     // MARK: - LifeCycle
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -44,18 +48,27 @@ extension LoginView {
     func setup() {
         usernameTextField.delegate = self
         passwordTextField.delegate = self
-        backgroundColor = .orange
+        backgroundColor = .secondarySystemBackground
     }
     
     func layout() {
         
         stackView.addArrangedSubview(usernameTextField)
+        stackView.addArrangedSubview(deviveView)
         stackView.addArrangedSubview(passwordTextField)
         
         addSubview(stackView)
+        
+        deviveView.snp.makeConstraints { make in
+            make.height.equalTo(1)
+        }
+        
         stackView.snp.makeConstraints { make in
             make.edges.equalToSuperview().inset(8)
         }
+        
+        layer.cornerRadius = 5
+        clipsToBounds = true
 
     }
 }
@@ -69,11 +82,7 @@ extension LoginView: UITextFieldDelegate {
     }
     
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-        if textField.text != "" {
-            return true
-        } else {
-            return false
-        }
+        return true
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
