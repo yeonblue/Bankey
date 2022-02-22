@@ -93,14 +93,13 @@ extension LoginViewController {
             assertionFailure("loginView로부터 전달받은 username, password가 nil")
             return
         }
-        
-        print(username, password)
-        
+
         if username.isEmpty || password.isEmpty {
             showLoginFailMessage(withMessage: "Username or Password cannot be blank")
             return
         }
         
+        // 단순히 테스트용 prototype 앱이므로 이러한 방식으로 구현.
         if username == "test" && password == "1234" {
             // iOS 15추가 기능, 버튼 indicator 표시
             signInButton.configuration?.showsActivityIndicator = true
