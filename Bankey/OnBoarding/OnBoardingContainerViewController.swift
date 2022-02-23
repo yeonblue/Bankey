@@ -6,25 +6,34 @@
 //
 
 import UIKit
+import SnapKit
+import Then
 
 class OnboardingContainerViewController: UIViewController {
 
+    // MARK: - Properties
     let pageViewController: UIPageViewController
     var pages = [UIViewController]()
-    
-    var currentVC: UIViewController {
-        didSet {
-        }
+    var currentVC: UIViewController
+
+    let closeButton = UIButton().then {
+        $0.setTitle("Close", for: .normal)
+        $0.setTitleColor(.systemCyan, for: .normal)
+        $0.addTarget(self, action: #selector(closeButtonTapped), for: .primaryActionTriggered)
     }
     
+    // MARK: - Lifecycle
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         self.pageViewController = UIPageViewController(transitionStyle: .scroll,
                                                        navigationOrientation: .horizontal,
                                                        options: nil)
         
-        let page1 = OnBoardingViewController(imgName: "car", labelText: "We provide the best service at a reasonable price and differentiated technology.\n\n1. Consumer finance system.\n2. Collateralized financial system.\n3. Sales management system.")
-        let page2 = OnBoardingViewController(imgName: "earth", labelText: "Move your money around the world quickly and securely")
-        let page3 = OnBoardingViewController(imgName: "best", labelText: "Let's start our best service")
+        let page1 = OnBoardingViewController(imgName: "car",
+                                             labelText: "We provide the best service at a reasonable price and differentiated technology.\n\n1. Consumer finance system.\n2. Collateralized financial system.\n3. Sales management system.")
+        let page2 = OnBoardingViewController(imgName: "earth",
+                                             labelText: "Move your money around the world quickly and securely")
+        let page3 = OnBoardingViewController(imgName: "best",
+                                             labelText: "Let's start our best service")
         
         pages.append(page1)
         pages.append(page2)
@@ -41,7 +50,13 @@ class OnboardingContainerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setup()
+        layout()
+    }
+}
+
+extension OnboardingContainerViewController {
+    private func setup(){
         view.backgroundColor = .lightGray
         
         // 추가할 때는 부모입장에서
@@ -65,6 +80,18 @@ class OnboardingContainerViewController: UIViewController {
                                               animated: false,
                                               completion: nil)
         currentVC = pages.first!
+    }
+    
+    private func layout() {
+        view.addSubview(closeButton)
+        closeButton.snp.makeConstraints { make in
+            make.top.equalTo(view.safeAreaLayoutGuide).offset(16)
+            make.leading.equalToSuperview().offset(16)
+        }
+    }
+    
+    @objc func closeButtonTapped(_ sender: UIButton) {
+        
     }
 }
 
@@ -97,27 +124,5 @@ extension OnboardingContainerViewController: UIPageViewControllerDataSource {
 
     func presentationIndex(for pageViewController: UIPageViewController) -> Int {
         return pages.firstIndex(of: self.currentVC) ?? 0
-    }
-}
-
-// MARK: - ViewControllers
-class ViewController1: UIViewController {
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .systemRed
-    }
-}
-
-class ViewController2: UIViewController {
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .systemGreen
-    }
-}
-
-class ViewController3: UIViewController {
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .systemBlue
     }
 }
