@@ -9,6 +9,10 @@ import UIKit
 import SnapKit
 import Then
 
+protocol LoginViewControllerDelegate: AnyObject {
+    func didLogin()
+}
+
 class LoginViewController: UIViewController {
 
     // MARK: - Properties
@@ -38,6 +42,8 @@ class LoginViewController: UIViewController {
     var password: String? {
         return loginView.passwordTextField.text
     }
+    
+    weak var delegate: LoginViewControllerDelegate?
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -103,6 +109,7 @@ extension LoginViewController {
         if username == "test" && password == "1234" {
             // iOS 15추가 기능, 버튼 indicator 표시
             signInButton.configuration?.showsActivityIndicator = true
+            delegate?.didLogin()
         } else {
             showLoginFailMessage(withMessage: "Incorrect Username or Password")
         }

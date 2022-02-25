@@ -9,6 +9,10 @@ import UIKit
 import SnapKit
 import Then
 
+protocol OnboardingContainerViewControllerDelegate: AnyObject {
+    func didFinishOnboarding()
+}
+
 class OnboardingContainerViewController: UIViewController {
 
     // MARK: - Properties
@@ -21,6 +25,8 @@ class OnboardingContainerViewController: UIViewController {
         $0.setTitleColor(.systemCyan, for: .normal)
         $0.addTarget(self, action: #selector(closeButtonTapped), for: .primaryActionTriggered)
     }
+    
+    weak var delegate: OnboardingContainerViewControllerDelegate?
     
     // MARK: - Lifecycle
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -71,9 +77,6 @@ extension OnboardingContainerViewController {
         // 3. pageViewController.view.removeFromSuperview() // parentVC.view.addsubView()와 반대 기능
         
         pageViewController.dataSource = self
-        pageViewController.view.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
-        }
         
         pageViewController.setViewControllers([pages.first!],
                                               direction: .forward,
@@ -84,14 +87,19 @@ extension OnboardingContainerViewController {
     
     private func layout() {
         view.addSubview(closeButton)
+        
         closeButton.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide).offset(16)
             make.leading.equalToSuperview().offset(16)
         }
+        
+        pageViewController.view.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
     }
     
     @objc func closeButtonTapped(_ sender: UIButton) {
-        
+        delegate?.didFinishOnboarding()
     }
 }
 
