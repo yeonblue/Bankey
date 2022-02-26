@@ -15,6 +15,9 @@
 		458916A227C503E00065535B /* OnBoardingContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458916A127C503E00065535B /* OnBoardingContainerViewController.swift */; };
 		458916A427C50D2C0065535B /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458916A327C50D2C0065535B /* OnBoardingViewController.swift */; };
 		458916A627CA18750065535B /* DummyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458916A527CA18750065535B /* DummyViewController.swift */; };
+		458916A927CA431C0065535B /* LocalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458916A827CA431C0065535B /* LocalData.swift */; };
+		458916AB27CA55090065535B /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458916AA27CA55090065535B /* Extension.swift */; };
+		458916AE27CA57FC0065535B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458916AD27CA57FC0065535B /* MainViewController.swift */; };
 		86614D43B5D4BB966C37125E /* Pods_Bankey.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA62A6DF55914ABFAA201CC4 /* Pods_Bankey.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +32,9 @@
 		458916A127C503E00065535B /* OnBoardingContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingContainerViewController.swift; sourceTree = "<group>"; };
 		458916A327C50D2C0065535B /* OnBoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewController.swift; sourceTree = "<group>"; };
 		458916A527CA18750065535B /* DummyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyViewController.swift; sourceTree = "<group>"; };
+		458916A827CA431C0065535B /* LocalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalData.swift; sourceTree = "<group>"; };
+		458916AA27CA55090065535B /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		458916AD27CA57FC0065535B /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		ACC72C501BD1BBCF0F7C96B6 /* Pods-Bankey.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bankey.release.xcconfig"; path = "Target Support Files/Pods-Bankey/Pods-Bankey.release.xcconfig"; sourceTree = "<group>"; };
 		DA62A6DF55914ABFAA201CC4 /* Pods_Bankey.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bankey.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0DAA53B6C165232D7AE3017 /* Pods-Bankey.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bankey.debug.xcconfig"; path = "Target Support Files/Pods-Bankey/Pods-Bankey.debug.xcconfig"; sourceTree = "<group>"; };
@@ -67,10 +73,12 @@
 		4589168627C2276A0065535B /* Bankey */ = {
 			isa = PBXGroup;
 			children = (
+				4589168727C2276A0065535B /* AppDelegate.swift */,
 				4589169C27C25A9C0065535B /* Files */,
 				4589169D27C25AFD0065535B /* Login */,
 				458916A027C5036A0065535B /* OnBoarding */,
-				4589168727C2276A0065535B /* AppDelegate.swift */,
+				458916AC27CA57D50065535B /* MainView */,
+				458916A727CA42E60065535B /* Util */,
 			);
 			path = Bankey;
 			sourceTree = "<group>";
@@ -102,6 +110,23 @@
 				458916A327C50D2C0065535B /* OnBoardingViewController.swift */,
 			);
 			path = OnBoarding;
+			sourceTree = "<group>";
+		};
+		458916A727CA42E60065535B /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				458916A827CA431C0065535B /* LocalData.swift */,
+				458916AA27CA55090065535B /* Extension.swift */,
+			);
+			name = Util;
+			sourceTree = "<group>";
+		};
+		458916AC27CA57D50065535B /* MainView */ = {
+			isa = PBXGroup;
+			children = (
+				458916AD27CA57FC0065535B /* MainViewController.swift */,
+			);
+			name = MainView;
 			sourceTree = "<group>";
 		};
 		4B5ED7025FF3FC247D59721D /* Frameworks */ = {
@@ -238,9 +263,12 @@
 				4589169F27C25B1B0065535B /* LoginView.swift in Sources */,
 				458916A627CA18750065535B /* DummyViewController.swift in Sources */,
 				4589168C27C2276A0065535B /* LoginViewController.swift in Sources */,
+				458916AB27CA55090065535B /* Extension.swift in Sources */,
 				4589168827C2276A0065535B /* AppDelegate.swift in Sources */,
 				458916A227C503E00065535B /* OnBoardingContainerViewController.swift in Sources */,
+				458916AE27CA57FC0065535B /* MainViewController.swift in Sources */,
 				458916A427C50D2C0065535B /* OnBoardingViewController.swift in Sources */,
+				458916A927CA431C0065535B /* LocalData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

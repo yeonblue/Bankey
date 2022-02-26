@@ -14,8 +14,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     let loginViewController = LoginViewController()
     let onboardingContainerViewController = OnboardingContainerViewController()
+    let mainViewController = MainViewController()
     let dummyViewController = DummyViewController()
-    var hasSeenOnboarded = false
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
@@ -27,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         onboardingContainerViewController.delegate = self
         dummyViewController.delegate = self
         
-        window?.rootViewController = loginViewController
+        window?.rootViewController = mainViewController //loginViewController
         
         return true
     }
@@ -38,8 +38,8 @@ extension AppDelegate: LoginViewControllerDelegate {
     func didLogin() {
         print("DEBUG: AppDelegate LoginViewControllerDelegate didLogin() called")
         
-        if hasSeenOnboarded {
-            setRootViewController(viewController: dummyViewController)
+        if LocalData.hasOnboarded {
+            setRootViewController(viewController: mainViewController)
         } else {
             setRootViewController(viewController: onboardingContainerViewController)
         }
@@ -57,8 +57,8 @@ extension AppDelegate: LogoutDelegate {
 extension AppDelegate: OnboardingContainerViewControllerDelegate {
     func didFinishOnboarding() {
         print("DEBUG: AppDelegate OnboardingContainerViewControllerDelegate didFinishOnboarding() called")
-        hasSeenOnboarded = true
-        setRootViewController(viewController: dummyViewController)
+        LocalData.hasOnboarded = true
+        setRootViewController(viewController: mainViewController)
     }
 }
 
