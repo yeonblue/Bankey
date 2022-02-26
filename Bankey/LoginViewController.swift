@@ -13,6 +13,10 @@ protocol LoginViewControllerDelegate: AnyObject {
     func didLogin()
 }
 
+protocol LogoutDelegate: AnyObject {
+    func didLogout()
+}
+
 class LoginViewController: UIViewController {
 
     // MARK: - Properties
@@ -51,6 +55,11 @@ class LoginViewController: UIViewController {
         
         setup()
         layout()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        signInButton.configuration?.showsActivityIndicator = false
     }
 }
 

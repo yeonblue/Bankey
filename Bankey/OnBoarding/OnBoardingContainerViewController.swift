@@ -18,12 +18,37 @@ class OnboardingContainerViewController: UIViewController {
     // MARK: - Properties
     let pageViewController: UIPageViewController
     var pages = [UIViewController]()
-    var currentVC: UIViewController
+    var currentVC: UIViewController {
+        didSet {
+            guard let index = pages.firstIndex(of: currentVC) else { return }
+            nextButton.isHidden = index == pages.count - 1
+            backButton.isHidden = index == 0
+            doneButton.isHidden = !(index == pages.count - 1) // 마지막 페이지일때만 표시
+        }
+    }
 
+    let nextButton = UIButton().then {
+        $0.setTitle("Next", for: .normal)
+        $0.setTitleColor(.systemCyan, for: .normal)
+        $0.addTarget(self, action: #selector(nextButtonTapped(_:)), for: .primaryActionTriggered)
+    }
+    
+    let backButton = UIButton().then {
+        $0.setTitle("Back", for: .normal)
+        $0.setTitleColor(.systemCyan, for: .normal)
+        $0.addTarget(self, action: #selector(backButtonTapped(_:)), for: .primaryActionTriggered)
+    }
+    
+    let doneButton = UIButton().then {
+        $0.setTitle("Done", for: .normal)
+        $0.setTitleColor(.systemCyan, for: .normal)
+        $0.addTarget(self, action: #selector(doneButtonTapped(_:)), for: .primaryActionTriggered)
+    }
+    
     let closeButton = UIButton().then {
         $0.setTitle("Close", for: .normal)
         $0.setTitleColor(.systemCyan, for: .normal)
-        $0.addTarget(self, action: #selector(closeButtonTapped), for: .primaryActionTriggered)
+        $0.addTarget(self, action: #selector(closeButtonTapped(_:)), for: .primaryActionTriggered)
     }
     
     weak var delegate: OnboardingContainerViewControllerDelegate?
@@ -87,10 +112,28 @@ extension OnboardingContainerViewController {
     
     private func layout() {
         view.addSubview(closeButton)
+        view.addSubview(backButton)
+        view.addSubview(nextButton)
+        view.addSubview(doneButton)
         
         closeButton.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide).offset(16)
             make.leading.equalToSuperview().offset(16)
+        }
+        
+        backButton.snp.makeConstraints { make in
+            make.leading.equalToSuperview().offset(16)
+            make.bottom.equalToSuperview().inset(64)
+        }
+        
+        nextButton.snp.makeConstraints { make in
+            make.trailing.equalToSuperview().inset(16)
+            make.bottom.equalToSuperview().inset(64)
+        }
+        
+        doneButton.snp.makeConstraints { make in
+            make.trailing.equalToSuperview().inset(16)
+            make.bottom.equalToSuperview().inset(64)
         }
         
         pageViewController.view.snp.makeConstraints { make in
@@ -99,6 +142,26 @@ extension OnboardingContainerViewController {
     }
     
     @objc func closeButtonTapped(_ sender: UIButton) {
+        delegate?.didFinishOnboarding()
+    }
+    
+    @objc func backButtonTapped(_ sender: UIButton) {
+        guard let previousVC = getPreviousViewController(from: currentVC) else { return }
+        pageViewController.setViewControllers([previousVC],
+                                              direction: .reverse,
+                                              animated: true,
+                                              completion: nil)
+    }
+    
+    @objc func nextButtonTapped(_ sender: UIButton) {
+        guard let nextVC = getNextViewController(from: currentVC) else { return }
+        pageViewController.setViewControllers([nextVC],
+                                              direction: .forward,
+                                              animated: true,
+                                              completion: nil)
+    }
+    
+    @objc func doneButtonTapped(_ sender: UIButton) {
         delegate?.didFinishOnboarding()
     }
 }

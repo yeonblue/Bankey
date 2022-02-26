@@ -11,8 +11,11 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
     let loginViewController = LoginViewController()
     let onboardingContainerViewController = OnboardingContainerViewController()
+    let dummyViewController = DummyViewController()
+    var hasSeenOnboarded = false
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
@@ -22,8 +25,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         loginViewController.delegate = self
         onboardingContainerViewController.delegate = self
+        dummyViewController.delegate = self
         
-        window?.rootViewController = onboardingContainerViewController
+        window?.rootViewController = loginViewController
         
         return true
     }
@@ -33,7 +37,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 extension AppDelegate: LoginViewControllerDelegate {
     func didLogin() {
         print("DEBUG: AppDelegate LoginViewControllerDelegate didLogin() called")
-        setRootViewController(viewController: onboardingContainerViewController)
+        
+        if hasSeenOnboarded {
+            setRootViewController(viewController: dummyViewController)
+        } else {
+            setRootViewController(viewController: onboardingContainerViewController)
+        }
+    }
+}
+
+// MARK: - LogoutDelegate
+extension AppDelegate: LogoutDelegate {
+    func didLogout() {
+        setRootViewController(viewController: loginViewController)
     }
 }
 
@@ -41,7 +57,8 @@ extension AppDelegate: LoginViewControllerDelegate {
 extension AppDelegate: OnboardingContainerViewControllerDelegate {
     func didFinishOnboarding() {
         print("DEBUG: AppDelegate OnboardingContainerViewControllerDelegate didFinishOnboarding() called")
-        setRootViewController(viewController: loginViewController)
+        hasSeenOnboarded = true
+        setRootViewController(viewController: dummyViewController)
     }
 }
 
@@ -63,3 +80,4 @@ extension AppDelegate {
         }
     }
 }
+
