@@ -28,7 +28,7 @@ class MainViewController: UITabBarController {
         let moneyNC = UINavigationController(rootViewController: moneyVC)
         let moreNC = UINavigationController(rootViewController: moreVC)
 
-        summaryNC.navigationBar.barTintColor = .mainTheme
+        //summaryNC.navigationBar.barTintColor = .black
         hideNavigationBarLine(summaryNC.navigationBar)
         
         let tabBarList = [summaryNC, moneyNC, moreNC]
@@ -47,23 +47,5 @@ class MainViewController: UITabBarController {
         tabBar.tintColor = .mainTheme
         tabBar.isTranslucent = false
         self.selectedIndex = 0
-    }
-}
-
-class AccountSummaryViewController: UIViewController {
-    override func viewDidLoad() {
-        view.backgroundColor = .systemGreen
-    }
-}
-
-class MoveMoneyViewController: UIViewController {
-    override func viewDidLoad() {
-        view.backgroundColor = .systemOrange
-    }
-}
-
-class MoreViewController: UIViewController {
-    override func viewDidLoad() {
-        view.backgroundColor = .systemPurple
     }
 }

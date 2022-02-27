@@ -18,6 +18,9 @@
 		458916A927CA431C0065535B /* LocalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458916A827CA431C0065535B /* LocalData.swift */; };
 		458916AB27CA55090065535B /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458916AA27CA55090065535B /* Extension.swift */; };
 		458916AE27CA57FC0065535B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458916AD27CA57FC0065535B /* MainViewController.swift */; };
+		458916B127CB936A0065535B /* AccountSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458916B027CB936A0065535B /* AccountSummaryViewController.swift */; };
+		458916B327CB95BA0065535B /* MoveMoneyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458916B227CB95BA0065535B /* MoveMoneyViewController.swift */; };
+		458916B527CB95C40065535B /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458916B427CB95C40065535B /* MoreViewController.swift */; };
 		86614D43B5D4BB966C37125E /* Pods_Bankey.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA62A6DF55914ABFAA201CC4 /* Pods_Bankey.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +38,9 @@
 		458916A827CA431C0065535B /* LocalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalData.swift; sourceTree = "<group>"; };
 		458916AA27CA55090065535B /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		458916AD27CA57FC0065535B /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		458916B027CB936A0065535B /* AccountSummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSummaryViewController.swift; sourceTree = "<group>"; };
+		458916B227CB95BA0065535B /* MoveMoneyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveMoneyViewController.swift; sourceTree = "<group>"; };
+		458916B427CB95C40065535B /* MoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
 		ACC72C501BD1BBCF0F7C96B6 /* Pods-Bankey.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bankey.release.xcconfig"; path = "Target Support Files/Pods-Bankey/Pods-Bankey.release.xcconfig"; sourceTree = "<group>"; };
 		DA62A6DF55914ABFAA201CC4 /* Pods_Bankey.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bankey.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0DAA53B6C165232D7AE3017 /* Pods-Bankey.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bankey.debug.xcconfig"; path = "Target Support Files/Pods-Bankey/Pods-Bankey.debug.xcconfig"; sourceTree = "<group>"; };
@@ -125,8 +131,19 @@
 			isa = PBXGroup;
 			children = (
 				458916AD27CA57FC0065535B /* MainViewController.swift */,
+				458916AF27CB934D0065535B /* ViewControllers */,
 			);
 			name = MainView;
+			sourceTree = "<group>";
+		};
+		458916AF27CB934D0065535B /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				458916B027CB936A0065535B /* AccountSummaryViewController.swift */,
+				458916B227CB95BA0065535B /* MoveMoneyViewController.swift */,
+				458916B427CB95C40065535B /* MoreViewController.swift */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 		4B5ED7025FF3FC247D59721D /* Frameworks */ = {
@@ -267,6 +284,9 @@
 				4589168827C2276A0065535B /* AppDelegate.swift in Sources */,
 				458916A227C503E00065535B /* OnBoardingContainerViewController.swift in Sources */,
 				458916AE27CA57FC0065535B /* MainViewController.swift in Sources */,
+				458916B327CB95BA0065535B /* MoveMoneyViewController.swift in Sources */,
+				458916B127CB936A0065535B /* AccountSummaryViewController.swift in Sources */,
+				458916B527CB95C40065535B /* MoreViewController.swift in Sources */,
 				458916A427C50D2C0065535B /* OnBoardingViewController.swift in Sources */,
 				458916A927CA431C0065535B /* LocalData.swift in Sources */,
 			);
