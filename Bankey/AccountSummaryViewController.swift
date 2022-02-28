@@ -26,6 +26,10 @@ extension AccountSummaryViewController {
     private func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.register(AccountSummaryTableViewCell.self,
+                           forCellReuseIdentifier: AccountSummaryTableViewCell.reuseIdentifier)
+        tableView.tableFooterView = UIView()
+        tableView.rowHeight = AccountSummaryTableViewCell.rowHeight
         
         view.addSubview(tableView)
         tableView.snp.makeConstraints { make in
@@ -47,8 +51,9 @@ extension AccountSummaryViewController {
 // MARK: - UITableViewDataSource, UITableViewDelegate
 extension AccountSummaryViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.textLabel?.text = cellData[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: AccountSummaryTableViewCell.reuseIdentifier,
+                                                 for: indexPath) as! AccountSummaryTableViewCell
+        cell.typeLabel.text = cellData[indexPath.row]
         return cell
     }
     

@@ -23,6 +23,7 @@
 		458916B527CB95C40065535B /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458916B427CB95C40065535B /* MoreViewController.swift */; };
 		458916B827CB9EF90065535B /* AccountSummaryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458916B727CB9EF90065535B /* AccountSummaryHeaderView.swift */; };
 		458916BA27CB9F140065535B /* AccountSummaryHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 458916B927CB9F140065535B /* AccountSummaryHeaderView.xib */; };
+		458916BD27CCAA120065535B /* AccountSummaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458916BC27CCAA120065535B /* AccountSummaryTableViewCell.swift */; };
 		86614D43B5D4BB966C37125E /* Pods_Bankey.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA62A6DF55914ABFAA201CC4 /* Pods_Bankey.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +46,7 @@
 		458916B427CB95C40065535B /* MoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
 		458916B727CB9EF90065535B /* AccountSummaryHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSummaryHeaderView.swift; sourceTree = "<group>"; };
 		458916B927CB9F140065535B /* AccountSummaryHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountSummaryHeaderView.xib; sourceTree = "<group>"; };
+		458916BC27CCAA120065535B /* AccountSummaryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSummaryTableViewCell.swift; sourceTree = "<group>"; };
 		ACC72C501BD1BBCF0F7C96B6 /* Pods-Bankey.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bankey.release.xcconfig"; path = "Target Support Files/Pods-Bankey/Pods-Bankey.release.xcconfig"; sourceTree = "<group>"; };
 		DA62A6DF55914ABFAA201CC4 /* Pods_Bankey.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bankey.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0DAA53B6C165232D7AE3017 /* Pods-Bankey.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bankey.debug.xcconfig"; path = "Target Support Files/Pods-Bankey/Pods-Bankey.debug.xcconfig"; sourceTree = "<group>"; };
@@ -155,10 +157,19 @@
 		458916B627CB9E950065535B /* TableViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				458916BB27CCA9E40065535B /* Header */,
+				458916BC27CCAA120065535B /* AccountSummaryTableViewCell.swift */,
+			);
+			name = TableViewCell;
+			sourceTree = "<group>";
+		};
+		458916BB27CCA9E40065535B /* Header */ = {
+			isa = PBXGroup;
+			children = (
 				458916B727CB9EF90065535B /* AccountSummaryHeaderView.swift */,
 				458916B927CB9F140065535B /* AccountSummaryHeaderView.xib */,
 			);
-			name = TableViewCell;
+			name = Header;
 			sourceTree = "<group>";
 		};
 		4B5ED7025FF3FC247D59721D /* Frameworks */ = {
@@ -295,6 +306,7 @@
 			files = (
 				458916B827CB9EF90065535B /* AccountSummaryHeaderView.swift in Sources */,
 				4589169F27C25B1B0065535B /* LoginView.swift in Sources */,
+				458916BD27CCAA120065535B /* AccountSummaryTableViewCell.swift in Sources */,
 				458916A627CA18750065535B /* DummyViewController.swift in Sources */,
 				4589168C27C2276A0065535B /* LoginViewController.swift in Sources */,
 				458916AB27CA55090065535B /* Extension.swift in Sources */,
