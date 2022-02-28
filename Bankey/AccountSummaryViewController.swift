@@ -18,23 +18,29 @@ class AccountSummaryViewController: UIViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        setup()
-        layout()
+        setupTableView()
     }
 }
 
 extension AccountSummaryViewController {
-    private func setup() {
+    private func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
-    }
-    
-    private func layout() {
+        
         view.addSubview(tableView)
         tableView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
+        setupHeaderView()
+    }
+    
+    private func setupHeaderView() {
+        let headerView = AccountSummaryHeaderView(frame: .zero)
+        var size = headerView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize) // 가장 작은 사이즈 기준
+        size.width = UIScreen.main.bounds.width
+        headerView.frame.size = size
+        
+        tableView.tableHeaderView = headerView
     }
 }
 
