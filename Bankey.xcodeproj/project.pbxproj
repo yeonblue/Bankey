@@ -24,6 +24,7 @@
 		458916B827CB9EF90065535B /* AccountSummaryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458916B727CB9EF90065535B /* AccountSummaryHeaderView.swift */; };
 		458916BA27CB9F140065535B /* AccountSummaryHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 458916B927CB9F140065535B /* AccountSummaryHeaderView.xib */; };
 		458916BD27CCAA120065535B /* AccountSummaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458916BC27CCAA120065535B /* AccountSummaryTableViewCell.swift */; };
+		458916C127CE10870065535B /* CurrencyFormater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458916C027CE10870065535B /* CurrencyFormater.swift */; };
 		86614D43B5D4BB966C37125E /* Pods_Bankey.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA62A6DF55914ABFAA201CC4 /* Pods_Bankey.framework */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +48,7 @@
 		458916B727CB9EF90065535B /* AccountSummaryHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSummaryHeaderView.swift; sourceTree = "<group>"; };
 		458916B927CB9F140065535B /* AccountSummaryHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountSummaryHeaderView.xib; sourceTree = "<group>"; };
 		458916BC27CCAA120065535B /* AccountSummaryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSummaryTableViewCell.swift; sourceTree = "<group>"; };
+		458916C027CE10870065535B /* CurrencyFormater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFormater.swift; sourceTree = "<group>"; };
 		ACC72C501BD1BBCF0F7C96B6 /* Pods-Bankey.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bankey.release.xcconfig"; path = "Target Support Files/Pods-Bankey/Pods-Bankey.release.xcconfig"; sourceTree = "<group>"; };
 		DA62A6DF55914ABFAA201CC4 /* Pods_Bankey.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bankey.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0DAA53B6C165232D7AE3017 /* Pods-Bankey.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bankey.debug.xcconfig"; path = "Target Support Files/Pods-Bankey/Pods-Bankey.debug.xcconfig"; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 				4589169C27C25A9C0065535B /* Files */,
 				4589169D27C25AFD0065535B /* Login */,
 				458916A027C5036A0065535B /* OnBoarding */,
+				458916AC27CA57D50065535B /* MainView */,
 				458916A727CA42E60065535B /* Util */,
 			);
 			path = Bankey;
@@ -119,7 +122,6 @@
 			children = (
 				458916A127C503E00065535B /* OnBoardingContainerViewController.swift */,
 				458916A327C50D2C0065535B /* OnBoardingViewController.swift */,
-				458916AC27CA57D50065535B /* MainView */,
 			);
 			path = OnBoarding;
 			sourceTree = "<group>";
@@ -129,6 +131,7 @@
 			children = (
 				458916A827CA431C0065535B /* LocalData.swift */,
 				458916AA27CA55090065535B /* Extension.swift */,
+				458916C027CE10870065535B /* CurrencyFormater.swift */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -141,7 +144,6 @@
 				458916AF27CB934D0065535B /* ViewControllers */,
 			);
 			name = MainView;
-			path = ..;
 			sourceTree = "<group>";
 		};
 		458916AF27CB934D0065535B /* ViewControllers */ = {
@@ -316,6 +318,7 @@
 				458916B327CB95BA0065535B /* MoveMoneyViewController.swift in Sources */,
 				458916B127CB936A0065535B /* AccountSummaryViewController.swift in Sources */,
 				458916B527CB95C40065535B /* MoreViewController.swift in Sources */,
+				458916C127CE10870065535B /* CurrencyFormater.swift in Sources */,
 				458916A427C50D2C0065535B /* OnBoardingViewController.swift in Sources */,
 				458916A927CA431C0065535B /* LocalData.swift in Sources */,
 			);

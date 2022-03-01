@@ -11,10 +11,28 @@ import Then
 
 class AccountSummaryTableViewCell: UITableViewCell {
     
+    enum AccountType: String {
+        case Banking
+        case CreditCard
+        case Investment
+    }
+    
+    struct AccountSummaryCellViewModel {
+        let accountType: AccountType
+        let accountName: String
+        let balance: Decimal
+        
+        var attributedBalanceString: NSMutableAttributedString?{
+            return CurrencyFormatter().makeAttributedCurrency(balance)
+        }
+    }
+    
     static let reuseIdentifier = "AccountSummaryTableViewCell"
     static let rowHeight: CGFloat = 90
     
     // MARK: - Properties
+    let viewModel: AccountSummaryCellViewModel? = nil
+    
     let typeLabel = UILabel().then {
         $0.font = .preferredFont(forTextStyle: .caption1)
         $0.adjustsFontForContentSizeCategory = true
@@ -43,7 +61,6 @@ class AccountSummaryTableViewCell: UITableViewCell {
     
     let balanceAmountLabel = UILabel().then {
         $0.textAlignment = .right
-        $0.text = "$123,456.78"
     }
     
     let arrowImageView = UIImageView().then {
@@ -54,8 +71,7 @@ class AccountSummaryTableViewCell: UITableViewCell {
     // MARK: - Lifecycle
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
-        setup()
+    
         layout()
     }
     
@@ -65,10 +81,6 @@ class AccountSummaryTableViewCell: UITableViewCell {
 }
 
 extension AccountSummaryTableViewCell {
-    private func setup() {
-        
-    }
-    
     private func layout() {
         contentView.addSubview(typeLabel) // tableViewCell의 경우 contentView에 추가
         typeLabel.snp.makeConstraints { make in
@@ -106,6 +118,25 @@ extension AccountSummaryTableViewCell {
             make.centerY.equalToSuperview()
             make.trailing.equalToSuperview().inset(16)
             make.width.height.equalTo(16)
+        }
+    }
+    
+    func configure(viewModel: AccountSummaryCellViewModel) {
+        typeLabel.text = viewModel.accountType.rawValue
+        nameLabel.text = viewModel.accountName
+        balanceAmountLabel.attributedText = viewModel.attributedBalanceString
+        
+        switch viewModel.accountType {
+            
+        case .Banking:
+            underlineView.backgroundColor = .mainTheme
+            balanceLabel.text = "Balance"
+        case .CreditCard:
+            underlineView.backgroundColor = .systemOrange
+            balanceLabel.text = "Current Balance"
+        case .Investment:
+            underlineView.backgroundColor = .systemIndigo
+            balanceLabel.text = "Value"
         }
     }
 }
