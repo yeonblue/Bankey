@@ -38,6 +38,7 @@ extension AccountSummaryViewController {
                            forCellReuseIdentifier: AccountSummaryTableViewCell.reuseIdentifier)
         tableView.tableFooterView = UIView()
         tableView.rowHeight = AccountSummaryTableViewCell.rowHeight
+        tableView.backgroundColor = .mainTheme // full 했을 때 background 컬러가 보이므로 추가
         
         view.addSubview(tableView)
         tableView.snp.makeConstraints { make in

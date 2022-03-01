@@ -28,8 +28,8 @@ class MainViewController: UITabBarController {
         let moneyNC = UINavigationController(rootViewController: moneyVC)
         let moreNC = UINavigationController(rootViewController: moreVC)
 
-        //summaryNC.navigationBar.barTintColor = .mainTheme
-        //hideNavigationBarLine(summaryNC.navigationBar)
+        summaryNC.navigationBar.barTintColor = .mainTheme
+        hideNavigationBarLine(summaryNC.navigationBar) // 스크롤 할 때 라인이 보이는 것 제거
         
         let tabBarList = [summaryNC, moneyNC, moreNC]
 
