@@ -9,6 +9,12 @@ import UIKit
 
 struct CurrencyFormatter {
     
+    var locale = Locale(identifier: "en_US")
+    
+    mutating func setLocale(identifier: String) {
+        self.locale = Locale(identifier: identifier)
+    }
+    
     func makeAttributedCurrency(_ amount: Decimal) -> NSMutableAttributedString {
         let tuple = breakIntoDollarsAndCents(amount)
         return makeFormattedBalance(dollars: tuple.0, cents: tuple.1)
@@ -51,7 +57,7 @@ struct CurrencyFormatter {
         let formatter = NumberFormatter()
         formatter.numberStyle = .currency
         formatter.usesGroupingSeparator = true
-        formatter.locale = Locale(identifier: "en_US")
+        formatter.locale = self.locale
         
         if let result = formatter.string(from: dollars as NSNumber) {
             return result

@@ -25,14 +25,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         loginViewController.delegate = self
         onboardingContainerViewController.delegate = self
         
+        showLoginViewController()
+        
+        return true
+    }
+    
+    private func showLoginViewController() {
         let vc = mainViewController
         vc.setStatusBar()
         UINavigationBar.appearance().isTranslucent = false
         UINavigationBar.appearance().backgroundColor = .mainTheme
-        
-        window?.rootViewController = mainViewController //loginViewController
-        
-        return true
+        window?.rootViewController = loginViewController
     }
 }
 
@@ -42,6 +45,11 @@ extension AppDelegate: LoginViewControllerDelegate {
         print("DEBUG: AppDelegate LoginViewControllerDelegate didLogin() called")
         
         if LocalData.hasOnboarded {
+            let vc = mainViewController
+            vc.setStatusBar()
+            UINavigationBar.appearance().isTranslucent = false
+            UINavigationBar.appearance().backgroundColor = .mainTheme
+            
             setRootViewController(viewController: mainViewController)
         } else {
             setRootViewController(viewController: onboardingContainerViewController)
