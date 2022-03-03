@@ -22,11 +22,26 @@ class AccountSummaryViewController: UIViewController {
     // MARK: - Properties
     var tableView = UITableView()
     
+    lazy var logoutBarButtonItem: UIBarButtonItem = {
+        let barButtonItem = UIBarButtonItem(title: "Logout",
+                                            style: .plain,
+                                            target: self,
+                                            action: #selector(logoutButtonTapped))
+        barButtonItem.tintColor = .label // 다크모드 등 대응위함
+        return barButtonItem
+    }()
+    
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
         genearateSampleAccountInfo()
+        setupNavigationBar()
+    }
+    
+    // MARK: - Helpers
+    @objc func logoutButtonTapped() {
+        
     }
 }
 
@@ -54,6 +69,10 @@ extension AccountSummaryViewController {
         headerView.frame.size = size
         
         tableView.tableHeaderView = headerView
+    }
+    
+    private func setupNavigationBar() {
+        navigationItem.rightBarButtonItem = logoutBarButtonItem
     }
 }
 
