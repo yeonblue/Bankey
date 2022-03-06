@@ -38,6 +38,22 @@ class LoginViewController: UIViewController {
         $0.isHidden = true
     }
     
+    let titleLabel = UILabel().then {
+        $0.textAlignment = .center
+        $0.font = .preferredFont(forTextStyle: .largeTitle)
+        $0.adjustsFontForContentSizeCategory = true
+        $0.alpha = 0
+        $0.text = "Bankey"
+    }
+    
+    let titleLeadingLabel = UILabel().then {
+        $0.textAlignment = .center
+        $0.font = .preferredFont(forTextStyle: .title3)
+        $0.adjustsFontForContentSizeCategory = true
+        $0.text = "Turn Your Mobile Phone Into A Digital Wallet"
+        $0.numberOfLines = 0
+    }
+    
     // Login
     var username: String? {
         return loginView.usernameTextField.text
@@ -57,6 +73,12 @@ class LoginViewController: UIViewController {
         layout()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        animateTitle()
+    }
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         signInButton.configuration?.showsActivityIndicator = false
@@ -71,6 +93,8 @@ extension LoginViewController {
     }
     
     private func layout() {
+        
+        // LoginView
         view.addSubview(loginView)
         view.addSubview(signInButton)
         view.addSubview(errorMsgLabel)
@@ -89,6 +113,22 @@ extension LoginViewController {
             make.top.equalTo(signInButton.snp.bottom).offset(16)
             make.leading.trailing.equalToSuperview().inset(8)
         }
+        
+        // Title
+        view.addSubview(titleLabel)
+        view.addSubview(titleLeadingLabel)
+        
+        titleLeadingLabel.snp.makeConstraints { make in
+            make.centerX.equalToSuperview().offset(-1000)
+            make.bottom.equalTo(loginView.snp.top).offset(-48)
+            make.width.equalTo(300)
+        }
+        
+        titleLabel.snp.makeConstraints { make in
+            make.centerX.equalToSuperview().offset(-1000)
+            make.bottom.equalTo(titleLeadingLabel.snp.top).offset(-16)
+        }
+
     }
 }
 
@@ -128,4 +168,37 @@ extension LoginViewController {
         errorMsgLabel.isHidden = false
         errorMsgLabel.text = message
     }
+}
+
+// MARK: - Animation
+extension LoginViewController {
+    private func animateTitle() {
+        
+        titleLabel.snp.updateConstraints { make in
+            make.centerX.equalToSuperview()
+            make.bottom.equalTo(titleLeadingLabel.snp.top).offset(-16)
+        }
+        
+        let animator = UIViewPropertyAnimator(duration: 2, curve: .easeInOut) {
+            self.view.layoutIfNeeded()
+        }
+        
+        animator.startAnimation()
+        
+        
+        titleLeadingLabel.snp.updateConstraints { make in
+            make.centerX.equalToSuperview()
+            make.bottom.equalTo(loginView.snp.top).offset(-48)
+            make.width.equalTo(300)
+        }
+        
+        let animator2 = UIViewPropertyAnimator(duration: 2, curve: .easeInOut) {
+            self.titleLabel.alpha = 1
+            self.view.layoutIfNeeded()
+        }
+        
+        animator2.startAnimation(afterDelay: 1)
+    }
+    
+    // snapKit 없이 NSLayoutConstraint를 하나 따와서 constant로 변경시켜 애니메이션도 가능
 }
