@@ -24,6 +24,7 @@ class LoginView: UIView {
     let passwordTextField = UITextField().then {
         $0.placeholder = "Password"
         $0.isSecureTextEntry = true
+        $0.enablePasswordToggle()
     }
     
     let deviveView = UIView().then {

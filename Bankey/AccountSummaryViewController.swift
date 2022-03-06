@@ -41,7 +41,7 @@ class AccountSummaryViewController: UIViewController {
     
     // MARK: - Helpers
     @objc func logoutButtonTapped() {
-        
+        NotificationCenter.default.post(name: .logout, object: nil)
     }
 }
 

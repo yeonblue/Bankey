@@ -46,6 +46,7 @@ class AccountSummaryTableViewCell: UITableViewCell {
     let nameLabel = UILabel().then {
         $0.font = .preferredFont(forTextStyle: .body)
         $0.adjustsFontForContentSizeCategory = true
+        $0.adjustsFontSizeToFitWidth = true
         $0.text = "Account Name"
     }
     

@@ -27,3 +27,7 @@ extension UIViewController {
         tabBarItem = UITabBarItem(title: title, image: image, tag: 0)
     }
 }
+
+extension Notification.Name {
+    static let logout = Notification.Name("logout")
+}
