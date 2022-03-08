@@ -151,6 +151,7 @@ extension LoginViewController {
 
         if username.isEmpty || password.isEmpty {
             showLoginFailMessage(withMessage: "Username or Password cannot be blank")
+            shakeLoginButton()
             return
         }
         
@@ -161,12 +162,24 @@ extension LoginViewController {
             delegate?.didLogin()
         } else {
             showLoginFailMessage(withMessage: "Incorrect Username or Password")
+            shakeLoginButton()
         }
     }
     
     private func showLoginFailMessage(withMessage message: String) {
         errorMsgLabel.isHidden = false
         errorMsgLabel.text = message
+    }
+    
+    private func shakeLoginButton() {
+        let animation = CAKeyframeAnimation()
+        animation.keyPath = "position.x"
+        animation.values = [0, 10, -10, 10, 0] // 이동할 반경, 프레임 기준
+        animation.keyTimes = [0, 0.16, 0.5, 0.83, 1]
+        animation.duration = 0.2
+        animation.isAdditive = true // 절대위치가 아닌, 현재위치 기준으로 애니메이션
+        
+        signInButton.layer.add(animation, forKey: "shake")
     }
 }
 

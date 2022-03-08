@@ -22,41 +22,53 @@
                     <rect key="frame" x="16" y="16" width="343" height="118"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="gid-hG-zER">
-                            <rect key="frame" x="0.0" y="0.0" width="217" height="118"/>
+                            <rect key="frame" x="0.0" y="0.0" width="235" height="118"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bankey" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qKY-MG-FKg">
-                                    <rect key="frame" x="0.0" y="0.0" width="217" height="26.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="235" height="26.5"/>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Morning" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mRU-EU-BoP">
-                                    <rect key="frame" x="0.0" y="30.5" width="217" height="26.5"/>
+                                    <rect key="frame" x="0.0" y="30.5" width="235" height="26.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello, User" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EsP-7e-hxo">
-                                    <rect key="frame" x="0.0" y="61" width="217" height="26.5"/>
+                                    <rect key="frame" x="0.0" y="61" width="235" height="26.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="stA-WC-7gp">
-                                    <rect key="frame" x="0.0" y="91.5" width="217" height="26.5"/>
+                                    <rect key="frame" x="0.0" y="91.5" width="235" height="26.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
                         </stackView>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sun.max.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="PMg-PY-bqB">
-                            <rect key="frame" x="225" y="-0.5" width="118" height="118.5"/>
-                            <color key="tintColor" systemColor="systemYellowColor"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MLR-7p-KCh">
+                            <rect key="frame" x="243" y="0.0" width="100" height="118"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sun.max.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="PMg-PY-bqB">
+                                    <rect key="frame" x="0.0" y="-1.5" width="100" height="100.5"/>
+                                    <color key="tintColor" systemColor="systemYellowColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="100" id="E4o-w7-foj"/>
+                                        <constraint firstAttribute="width" constant="100" id="cgk-Nm-apw"/>
+                                    </constraints>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstAttribute="width" secondItem="PMg-PY-bqB" secondAttribute="height" multiplier="1:1" id="G7k-G9-Etz"/>
+                                <constraint firstItem="PMg-PY-bqB" firstAttribute="centerY" secondItem="MLR-7p-KCh" secondAttribute="centerY" constant="-10" id="HUX-0t-aMi"/>
+                                <constraint firstAttribute="width" constant="100" id="Pbq-OU-gHG"/>
+                                <constraint firstItem="PMg-PY-bqB" firstAttribute="centerX" secondItem="MLR-7p-KCh" secondAttribute="centerX" id="wSg-PC-J22"/>
                             </constraints>
-                        </imageView>
+                        </view>
                     </subviews>
                 </stackView>
             </subviews>

@@ -27,6 +27,7 @@
 		458916C127CE10870065535B /* CurrencyFormater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458916C027CE10870065535B /* CurrencyFormater.swift */; };
 		458916D027CF8D790065535B /* CurrencyFormatterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458916CF27CF8D790065535B /* CurrencyFormatterTest.swift */; };
 		458916D227D49F7C0065535B /* UITextField+SecureToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458916D127D49F7C0065535B /* UITextField+SecureToggle.swift */; };
+		458916D527D77E840065535B /* ShakeBellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458916D427D77E840065535B /* ShakeBellView.swift */; };
 		86614D43B5D4BB966C37125E /* Pods_Bankey.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA62A6DF55914ABFAA201CC4 /* Pods_Bankey.framework */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +65,7 @@
 		458916C627CE3D470065535B /* BankeyUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BankeyUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		458916CF27CF8D790065535B /* CurrencyFormatterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFormatterTest.swift; sourceTree = "<group>"; };
 		458916D127D49F7C0065535B /* UITextField+SecureToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+SecureToggle.swift"; sourceTree = "<group>"; };
+		458916D427D77E840065535B /* ShakeBellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShakeBellView.swift; sourceTree = "<group>"; };
 		ACC72C501BD1BBCF0F7C96B6 /* Pods-Bankey.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bankey.release.xcconfig"; path = "Target Support Files/Pods-Bankey/Pods-Bankey.release.xcconfig"; sourceTree = "<group>"; };
 		DA62A6DF55914ABFAA201CC4 /* Pods_Bankey.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bankey.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0DAA53B6C165232D7AE3017 /* Pods-Bankey.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bankey.debug.xcconfig"; path = "Target Support Files/Pods-Bankey/Pods-Bankey.debug.xcconfig"; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				458916AD27CA57FC0065535B /* MainViewController.swift */,
+				458916D327D77E620065535B /* View */,
 				458916B627CB9E950065535B /* TableViewCell */,
 				458916AF27CB934D0065535B /* ViewControllers */,
 			);
@@ -205,6 +208,14 @@
 				458916CF27CF8D790065535B /* CurrencyFormatterTest.swift */,
 			);
 			path = BankeyUnitTests;
+			sourceTree = "<group>";
+		};
+		458916D327D77E620065535B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				458916D427D77E840065535B /* ShakeBellView.swift */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 		4B5ED7025FF3FC247D59721D /* Frameworks */ = {
@@ -373,6 +384,7 @@
 				458916B827CB9EF90065535B /* AccountSummaryHeaderView.swift in Sources */,
 				4589169F27C25B1B0065535B /* LoginView.swift in Sources */,
 				458916BD27CCAA120065535B /* AccountSummaryTableViewCell.swift in Sources */,
+				458916D527D77E840065535B /* ShakeBellView.swift in Sources */,
 				458916A627CA18750065535B /* DummyViewController.swift in Sources */,
 				458916D227D49F7C0065535B /* UITextField+SecureToggle.swift in Sources */,
 				4589168C27C2276A0065535B /* LoginViewController.swift in Sources */,

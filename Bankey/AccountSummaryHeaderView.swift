@@ -13,6 +13,9 @@ class AccountSummaryHeaderView: UIView {
     // MARK: - IBOutlets
     @IBOutlet weak var contentView: UIView!
     
+    // MARK: - Properties
+    let bellView = ShakeBellView()
+    
     // MARK: - Lifecycle
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -37,6 +40,15 @@ class AccountSummaryHeaderView: UIView {
         
         contentView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
+        }
+        
+        setUpBellView()
+    }
+    
+    private func setUpBellView() {
+        addSubview(bellView)
+        bellView.snp.makeConstraints { make in
+            make.trailing.bottom.equalToSuperview()
         }
     }
 }
